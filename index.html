@@ -38,7 +38,7 @@
 
         document.addEventListener('visibilitychange', function () {
             if (document.visibilityState == "hidden") {
-                isActive = setInterval(function () { SendMessage("Playfab", "DoSomething"); }, 250);
+                isActive = setInterval(function () { unityInstance.SendMessage("Playfab", "DoSomething"); }, 250);
             } else {
                 clearInterval(isActive);
                 isActive = false;
