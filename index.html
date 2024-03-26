@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -7,6 +8,7 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
 </head>
+
 <body>
     <div id="unity-container" class="unity-desktop">
         <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
@@ -23,6 +25,27 @@
             <div id="unity-build-title">Drip Shoot Shot</div>
         </div>
     </div>
+    <script>
+        function loadDiscordSDK() {
+            data = {
+                client_id: "1221026476862869564",
+                client_secret: "BmnZ0dF7BqlvGCvq7S05Msx1SCgpIH02",
+                grant_type: "authorization_code",
+                redirect_uri: "https://ammandev.github.io/DripShoot/",
+            };
+
+            headers = {
+                "Content-Type": "application/x-www-form-urlencoded",
+            };
+
+            const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${'1221026476862869564'}&redirect_uri=${encodeURIComponent(
+                "https://ammandev.github.io/DripShoot"
+            )}&response_type=code&scope=${encodeURIComponent("identify")}`;
+            window.location.href = authUrl;
+        }
+
+        loadDiscordSDK();
+    </script>
     <script>
 
         var container = document.querySelector("#unity-container");
@@ -131,4 +154,5 @@
         document.body.appendChild(script);
     </script>
 </body>
+
 </html>
